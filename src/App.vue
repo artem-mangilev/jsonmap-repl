@@ -1,14 +1,14 @@
 <template>
-  <HelloWorld />
+  <Sandbox />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Sandbox from './components/Sandbox'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Sandbox
   }
 }
 </script>

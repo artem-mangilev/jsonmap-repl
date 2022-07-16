@@ -13,10 +13,10 @@
 <script>
 import { JsonMap } from "jsonmap-js"
 
-const transformer = new JsonMap()
+const transformer = new JsonMap({ space: 2 })
 
 export default {
-  name: 'HelloWorld',
+  name: 'Sandbox',
 
   data() {
     return {
@@ -27,12 +27,12 @@ export default {
   methods: {
     transform() {
       this.transforResult = transformer.transform(this.inputValue, this.transformerValue)
-
-      console.log(this.transforResult)
     }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style scoped>
+  
+</style>
