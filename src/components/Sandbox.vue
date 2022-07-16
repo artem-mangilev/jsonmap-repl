@@ -1,13 +1,21 @@
 <template>
-  <h1>Input</h1>
-  <textarea v-model="inputValue"></textarea>
+  <div class="wrapper">
+    <div class="textareas">
+      <div class="textarea-block">
+        <h2>Input</h2>
+        <textarea class="textarea" v-model="inputValue"></textarea>
+      </div>
 
-  <h1>Transformer</h1>
-  <textarea v-model="transformerValue"></textarea>
+      <div class="textarea-block">
+        <h2>Transformer</h2>
+        <textarea class="textarea" v-model="transformerValue"></textarea>    
+      </div>
+    </div>
 
-  <pre>{{ transforResult }}</pre>
+    <button @click="transform">Transform</button>
+  </div>
 
-  <button @click="transform">Transform</button>
+  <pre class="result">{{ transforResult }}</pre>
 </template>
 
 <script>
@@ -32,7 +40,28 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .textareas {
+    flex-basis: 100%;
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+  }
+
+  .textarea {
+    width: 500px;
+    height: 400px;
+    max-width: 500px;
+    max-height: 400px;
+  }
+
+  .result {
+    flex-basis: 100%;
+  }
 </style>

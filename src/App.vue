@@ -1,5 +1,9 @@
 <template>
-  <Sandbox />
+  <h1>Jsonmap</h1>
+
+  <div class="sandbox">
+    <Sandbox />
+  </div>
 </template>
 
 <script>
@@ -13,4 +17,10 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+  .sandbox {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>
