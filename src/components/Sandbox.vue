@@ -1,4 +1,13 @@
 <template>
+  <div ref="errorToast" class="toast align-items-center">
+    <div class="d-flex">
+      <div class="toast-body">
+        {{ errorMessage }}
+      </div>
+      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+
   <div class="wrapper">
     <div class="textareas">
       <div class="textarea-block">
@@ -19,6 +28,7 @@
 </template>
 
 <script>
+import { Toast } from "bootstrap"
 import { JsonMap } from "jsonmap-js"
 
 const transformer = new JsonMap({ space: 2 })
@@ -28,14 +38,24 @@ export default {
 
   data() {
     return {
-      transforResult: ''
+      transforResult: '',
+      errorMessage: ''
     }
   },
 
   methods: {
     transform() {
-      this.transforResult = transformer.transform(this.inputValue, this.transformerValue)
+      try {
+        this.transforResult = transformer.transform(this.inputValue, this.transformerValue) 
+      } catch (error) {
+        this.errorMessage = error.message
+        this.errorToast.show()
+      }
     }
+  },
+
+  mounted() {
+    this.errorToast = new Toast(this.$refs.errorToast)
   }
 }
 </script>
