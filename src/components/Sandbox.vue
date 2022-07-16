@@ -3,16 +3,16 @@
     <div class="textareas">
       <div class="textarea-block">
         <h2>Input</h2>
-        <textarea class="textarea" v-model="inputValue"></textarea>
+        <textarea class="textarea form-control" v-model="inputValue"></textarea>
       </div>
 
       <div class="textarea-block">
         <h2>Transformer</h2>
-        <textarea class="textarea" v-model="transformerValue"></textarea>    
+        <textarea class="textarea form-control" v-model="transformerValue"></textarea>    
       </div>
     </div>
 
-    <button @click="transform">Transform</button>
+    <button class="btn btn-primary" @click="transform">Transform</button>
   </div>
 
   <pre class="result">{{ transforResult }}</pre>
@@ -52,12 +52,13 @@ export default {
     width: 1000px;
     margin: 0 auto;
     display: flex;
+    justify-content: space-between;
   }
 
   .textarea {
-    width: 500px;
+    width: 450px;
     height: 400px;
-    max-width: 500px;
+    max-width: 450px;
     max-height: 400px;
   }
 
