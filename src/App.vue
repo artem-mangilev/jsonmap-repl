@@ -1,5 +1,5 @@
 <template>
-  <h1>Jsonmap</h1>
+  <h1 class="mb-2 p-2">Jsonmap</h1>
 
   <div class="sandbox">
     <Sandbox />
