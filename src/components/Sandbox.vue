@@ -1,10 +1,12 @@
 <template>
-  <div ref="errorToast" class="toast align-items-center">
-    <div class="d-flex">
-      <div class="toast-body">
-        {{ errorMessage }}
+  <div class="toast-container position-absolute p-3 top-0 end-0">
+    <div ref="errorToast" class="toast align-items-center bg-danger text-white">
+      <div class="d-flex">
+        <div class="toast-body">
+          {{ errorMessage }}
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
-      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
   </div>
 
